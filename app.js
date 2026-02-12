@@ -6,20 +6,17 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "https://token-management-eight.vercel.app",
-      "http://localhost:3000",
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     credentials: true,
   }),
 );
 
+app.options("*", cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
 app.use("/api/tokens", tokenRoutes);
-
 app.use(errorHandler);
 
 module.exports = app;
