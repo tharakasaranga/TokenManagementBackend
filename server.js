@@ -1,10 +1,13 @@
 const dotenv = require("dotenv");
-dotenv.config();
-
 const connectDB = require("./config/db");
 const app = require("./app");
 
-connectDB();
+dotenv.config();
+
+connectDB().catch((err) => {
+  console.error("Database Connection Failed:", err);
+  process.exit(1);
+});
 
 const PORT = process.env.PORT || 5000;
 
