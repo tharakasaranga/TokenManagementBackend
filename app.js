@@ -6,9 +6,9 @@ const app = express();
 
 const corsOptions = {
   origin: [
-    "https://token-management-4n87002m5-tharakasarangas-projects.vercel.app",
+    "https://token-management-eb8txenfo-tharakasarangas-projects.vercel.app",
     "http://localhost:3000",
-    "*"
+    "*",
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
